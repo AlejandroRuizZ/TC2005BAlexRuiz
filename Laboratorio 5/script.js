@@ -107,8 +107,6 @@ function Problema5(){
 
 //Problema 6
 // Write a JavaScript program to display the reading status (i.e. display book name, author name and reading status) of the following books.
-//https://www.w3resource.com/javascript-exercises/javascript-object-exercises.php
-
 const book1 =
     {
         author: 'Bill Gates',
@@ -160,8 +158,8 @@ const book2 =
 
 
 
-Problema1();
-Problema2();
-Problema3(FunnyArray);
-Problema4(UnFunnyArray);
-Problema5();
+//Problema1();
+//Problema2();
+//Problema3(FunnyArray);
+//Problema4(UnFunnyArray);
+//Problema5();
