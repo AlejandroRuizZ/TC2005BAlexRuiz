@@ -1,0 +1,31 @@
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+  }
+
+
+
+  #mensaje {
+    display:none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+  .contenedor {
+    background-color: #f1f1f1;
+    padding: 20px;
+  }
+  .valido {
+    color: green;
+  }
+  .invalido {
+    color: red;
+  }
