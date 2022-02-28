@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Laboratorio 6</title>
+     <link rel="stylesheet" href="styles.css"/>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">  
+</head>
+<body>
+    <table class="tabla">
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <img src="https://www.gamereactor.no/media/17/eldenring_3501763.jpg"><br>
+                    Elden Ring $100<br>
+                    <input type="number" min="0" max="100" id="ringInput">
+                </td>
+                
+                <td>
+                    <img src="https://cdnb.artstation.com/p/assets/covers/images/029/304/717/large/mitch-mohrhauser-mitch-mohrhauser-ghost-boxart-1-thumb.jpg?1597116717"><br>
+                    Ghost of Tsushima $40<br>
+                    <input type="number" min="0" max="100" id="ghostInput">
+
+
+                </td>
+                <td>
+                    <img src="https://www.mobygames.com/images/covers/l/793635-sifu-windows-front-cover.jpg"><br>
+                    Sifu $60<br>
+                    <input type="number" min="0" max="100" id="sifuInput">
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+    <button id="boton">Meter productos al Carrito</button>
+    <h1>Total</h1>
+    <div id="total"></div>
+    <h1>Total con tax</h1>
+    <div id="totalMasTax"></div>
+    <script src="tienda.js"></script>
+        
+
+</body>
+</html>
