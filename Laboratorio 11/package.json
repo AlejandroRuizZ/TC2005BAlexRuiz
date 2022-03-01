@@ -1,0 +1,26 @@
+{
+  "name": "spirit",
+  "version": "1.0.0",
+  "description": "Packet",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlejandroRuizZ/TC2005BAlexRuiz.git#main"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Alejandro Ruiz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlejandroRuizZ/TC2005BAlexRuiz/issues"
+  },
+  "homepage": "https://github.com/AlejandroRuizZ/TC2005BAlexRuiz/tree/main#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
