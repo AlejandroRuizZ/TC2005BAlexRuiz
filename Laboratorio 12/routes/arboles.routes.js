@@ -3,6 +3,11 @@ const express = require('express');
 const router = express.Router();
 const arboles = ["Olmo", "Pino", "Roble"];
 const filesystem = require('fs');
+const path = require('path');
+
+router.get('/Alex', (request, response, next) => {
+    response.sendFile(path.join(__dirname, '..', 'views', 'Alex.html'));
+});
 
 router.get('/',(request, response, next) =>{
     let respuesta = '<!DOCTYPE html><html lang="es-mx"><head><title>Arboles</title><meta charset="utf-8"></meta></head><body><h1>Arboles</h1><main><h2>Existen Arboles</h2><p>Estos son los Arboles:</p><ol>';

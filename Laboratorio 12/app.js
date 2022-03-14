@@ -6,7 +6,11 @@ const bodyParser = require('body-parser');
 
 const rutas_arboles = require('./routes/arboles.routes')
 const rutas_animales = require('./routes/animales.routes')
+const path = require('path')
 
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/arboles',rutas_arboles);
