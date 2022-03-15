@@ -1,0 +1,32 @@
+<%- include('includes/head.ejs') %>
+    <h1>Bienvenido a este sitio de caballos chidos</h1>
+    <main>
+        <h2>Aquí se habla de Arboles</h2>
+        <p>Estos son nuestros Arboles:</p>
+        <div class="row">
+        <% if (arboles.length > 0) { %>
+                <% for (let arbol of arboles) { %>
+                    <div class="col s12 m4 l3">
+                        <div class="card small">
+                            <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="https://www.postposmo.com/wp-content/uploads/2020/07/árbol-olmo1.jpg">
+                            </div>
+                            <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4"><%= arbol.nombre %><i class="material-icons right">more_vert</i></span>
+                            <p><a href="#">This is a link</a></p>
+                            </div>
+                            <div class="card-reveal green lighten-1">
+                            <span class="card-title grey-text text-darken-4"><%= arbol.nombre %><i class="material-icons right">close</i></span>
+                            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+        <% } else { %>
+            <h3>No tenemos Arboles</h3>
+        <% } %>   
+        </div>
+        <a href="/arboles/nuevo">
+            <i class="material-icons">add</i> Agregar un nuevo Arbol</a>
+    </main>
+<%- include('includes/foot.ejs') %>
