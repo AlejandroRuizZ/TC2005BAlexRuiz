@@ -1,10 +1,11 @@
 const express = require('express');
-
-const router = express.Router();
 const arboles = [{nombre:"Olmo"}, 
 {nombre:"Pino"}, 
 {nombre:"Roble"}
-];
+]; 
+
+
+const router = express.Router();
 const filesystem = require('fs');
 const path = require('path');
 
@@ -14,7 +15,6 @@ router.get('/Alex', (request, response, next) => {
 
 router.get('/',(request, response, next) =>{
     response.render('lista', {arboles: arboles });
-    response.send(respuesta);
 });
 
 router.get('/nuevo',(request, response, next) =>{
