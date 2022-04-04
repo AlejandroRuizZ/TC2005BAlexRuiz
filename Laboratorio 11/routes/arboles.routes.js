@@ -20,7 +20,7 @@ router.get('/nuevo',(request, response, next) =>{
 });
 
 router.post('/nuevo',(request,response,next) =>{
-    console.log(request.body);
+    //console.log(request.body);
     arboles.push(request.body.nombre);
     console.log(arboles);
     filesystem.writeFileSync('Arboles.txt', request.body.nombre)

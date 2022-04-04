@@ -1,0 +1,14 @@
+<%- include('includes/head.ejs') %>
+    <h1>Bienvenido a este sitio de Arboles</h1>
+    <main>
+        <h2>Aquí se habla se de nuevos Arboles</h2>
+        <p><%= nombre %>, ingresa los datos del nuevo Arboles:</p>
+        <form action="/arboles/nuevo" method="POST">
+            <label for="nombre">Nombre del nuevo Arbol:</label>
+            <input type="text" name="nombre" required>
+            <input type="submit" value="Enviar">
+        </form>
+        <br><br>
+        <a href="/arboles/">Regresar a la lista de Arboles</a>
+    </br>
+<%- include('includes/foot.ejs') %>

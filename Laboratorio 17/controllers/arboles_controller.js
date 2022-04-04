@@ -7,10 +7,17 @@ exports.listar = (request, response, next) =>{
     //console.log(request.body)
     console.log(request.get('Cookie').split("=")[1]);
     console.log(request.cookies);
-    response.render('lista',{
-        arboles: Arbol.fetchAll(),
-        ultimo_arbol: request.cookies.ultimo_arbol ? request.cookies.ultimo_arbol : '',
-        usuario: request.session.usuario  
+    Arbol.fetchAll()
+    .then(([rows, fieldData]) =>{
+        console.log(rows);
+        response.render('lista', {
+            arboles: rows,
+            ultimo_arbol: request.cookies.ultimo_arbol ? request.cookies.ultimo_arbol: '',
+            usuario: request.session.usuario ? request.session.usuario : ''
+        });
+    })
+    .catch(err => {
+        console.log(err);
     });
 };
 

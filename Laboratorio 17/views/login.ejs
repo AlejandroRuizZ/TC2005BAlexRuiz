@@ -1,0 +1,14 @@
+<%- include('includes/head.ejs') %>
+<h1>Bienvenido a Arboles</h1>
+<main>
+    <h2>Aqui tenemos Arboles</h2>
+    <p>Ingresa tu Nombre de Usuario y Contraseña:</p>
+    <form action="/users/login" method="POST">
+        <label for="nombre"> Nombre de Usuario:</label>
+        <input type="text" name="nombre" required>
+        <label for="passwd"> Contraseña:</label>
+        <input type="text" name="passwd" required>
+        <input type="submit" value="Enviar">
+    </form>
+</br><br><br><br>
+<%- include('includes/foot.ejs')%>
