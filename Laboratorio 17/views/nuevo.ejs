@@ -5,7 +5,12 @@
         <p><%= nombre %>, ingresa los datos del nuevo Arboles:</p>
         <form action="/arboles/nuevo" method="POST">
             <label for="nombre">Nombre del nuevo Arbol:</label>
-            <input type="text" name="nombre" required>
+            <input type="text" id="nombre" name="nombre" placeholder="Roble">
+            <label for="descripcion">Descripcion: </label>
+            <input type="text" id="descripcion" name="descripcion" placeholder="Es Verde">
+            <label for="imagen"> Imagen: </label>
+            <input type="text" id="imagen"   name="imagen" placeholder="Ingrese Link de foto">
+            <br><br>
             <input type="submit" value="Enviar">
         </form>
         <br><br>

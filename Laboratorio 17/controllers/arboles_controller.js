@@ -32,11 +32,13 @@ exports.get_nuevo = (request, response, next) =>{
 
 exports.post_nuevo = (request,response,next) =>{
     console.log(request.body);
-    const arbol = new Arbol(request.body.nombre);
-    arbol.save();
-    filesystem.writeFileSync('Arboles.txt', request.body.nombre)
-    response.status(303);
-    response.setHeader('Set-Cookie','ultimo_arbol='+arbol.nombre)
+    const arbol = new Arbol(request.body.nombre, request.body.descripcion,request.body.imagen);
+    arbol.save()
+    .then(()=> {
+        response.setHeader('Set-Cookie','ultimo_arbol='+arbol.nombre)
     request.cookies.ultimo_arbol=arbol.nombre;
     response.redirect('/arboles/');
+    }).catch(err => console.log(err))
+    //filesystem.writeFileSync('Arboles.txt', request.body.nombre)
+    //response.status(303);
 };
