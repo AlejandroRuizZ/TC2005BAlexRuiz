@@ -17,6 +17,7 @@ exports.login = (request, response, next) => {
             return response.redirect('/users/login')
         }
         const user = new User(rows[0].username, rows[0].password, rows[0].nombre);
+        console.log(user)
         bcrypt.compare(request.body.passwd, user.password)
         .then(DoMatch => {
             if(DoMatch) {

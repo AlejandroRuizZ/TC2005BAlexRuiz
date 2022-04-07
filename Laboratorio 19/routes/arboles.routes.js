@@ -8,6 +8,8 @@ router.get('/Alex', isAuth, arbolesController.Alex);
 
 router.get('/', isAuth,arbolesController.listar);
 
+router.get('/:arbol_id', arbolesController.displayOne);
+
 router.get('/nuevo', isAuth, arbolesController.get_nuevo);
 
 router.post('/nuevo',arbolesController.post_nuevo);

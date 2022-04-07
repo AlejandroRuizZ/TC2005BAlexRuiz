@@ -25,4 +25,13 @@ module.exports = class User {
         return db.execute(
             'SELECT * FROM usuarios WHERE username=?',[usuario])
     }
+    static getRole(usuario){
+        return db.execute(
+            'SELECT idRol FROM usuario_rol,usuarios ' + 
+            'WHERE usuario_rol.idUsuario = usuarios.username AND username =?',[usuario]
+        )
+    } static getPrivilege(role){
+        return db.execute('SELECT Accion from privilegios,rol_privilegio ' +
+         'WHERE privilegios.idPrevilegios = rol_privilegio.idPrivilegio AND idRol =?' [role])
+    }
 }

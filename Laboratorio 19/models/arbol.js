@@ -13,4 +13,7 @@ module.exports = class Arbol {
     static fetchAll(){
         return db.execute('SELECT * FROM arboles')
     }
+    static findOne(arbolIndividual){
+        return db.execute('SELECT * FROM arboles WHERE id =?',[arbolIndividual]);
+    }
 }

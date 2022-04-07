@@ -29,7 +29,16 @@ exports.get_nuevo = (request, response, next) =>{
     console.log(request.body);
     response.render('nuevo',{nombre: 'Alex' , usuario: request.session.usuario})
 };
-
+exports.displayOne = (request, response, next) => {
+    Arbol.findOne(request.params.arbol_id)
+    .then(([rows,fieldData]) => {
+        response.render('lista',{
+            arboles: rows,
+            usuario: request.session.usuario ? request.session.usuario : '',
+            ultimo_arbol: request.cookies.ultimo_arbol ? request.cookies.ultimo_arbol: ''
+        })
+    })
+}
 exports.post_nuevo = (request,response,next) =>{
     console.log(request.body);
     const arbol = new Arbol(request.body.nombre, request.body.descripcion,request.body.imagen);
