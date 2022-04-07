@@ -2,8 +2,9 @@
     <h1>Bienvenido a este sitio de Arboles</h1>
     <main>
         <h2>Aquí se habla se de nuevos Arboles</h2>
-        <p><%= nombre %>, ingresa los datos del nuevo Arbol:</p>
+        <p><%= nombre %>, ingresa los datos del nuevo Arboles:</p>
         <form action="/arboles/nuevo" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
             <label for="nombre">Nombre del nuevo Arbol:</label>
             <input type="text" id="nombre" name="nombre" placeholder="Roble">
             <label for="descripcion">Descripcion: </label>
