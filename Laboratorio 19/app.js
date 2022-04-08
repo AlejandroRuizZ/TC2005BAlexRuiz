@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 
 const bodyParser = require('body-parser');
-
+const csrf = require('csurf');
+const csrfProtection = csrf();
 
 const rutas_arboles = require('./routes/arboles.routes')
 const rutas_animales = require('./routes/animales.routes')
@@ -10,9 +11,9 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const rutas_usuarios = require('./routes/auth.routes')
 const path = require('path')
-const csrf = require('csurf')
 
-const csrfProtection = csrf();
+
+
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -21,20 +22,22 @@ app.use(session({
     secret: 'gKNJFYzbZ4FMaXmTbXhB',
     resave: false,
     saveUninitialized: false,
-}));
+}));    
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(csrfProtection);
+
+app.use((request, response,next) => {
+    response.locals.csrfToken = request.csrfToken();
+    next();
+});
+
 app.use(cookieParser());
 app.use('/arboles',rutas_arboles);
 app.use('/animales', rutas_animales);
 app.use('/users',rutas_usuarios);
-
-app.use(csrfProtection);
-app.use((request, response,next) => {
-    response.locals.csrfToken = request.csrfToken();
-    next();
-})
-
 
 //Middleware
 app.use((request, response, next) => {

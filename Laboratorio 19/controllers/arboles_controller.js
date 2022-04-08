@@ -1,15 +1,16 @@
 const path = require('path');
 const filesystem = require('fs');
 const Arbol = require('../models/arbol');
+const { response } = require('express');
 
 
 exports.listar = (request, response, next) =>{
     //console.log(request.body)
-    console.log(request.get('Cookie').split("=")[1]);
-    console.log(request.cookies);
+    //console.log(request.get('Cookie').split("=")[1]);
+    //console.log(request.cookies);
     Arbol.fetchAll()
     .then(([rows, fieldData]) =>{
-        console.log(rows);
+        //console.log(rows);
         response.render('lista', {
             arboles: rows,
             ultimo_arbol: request.cookies.ultimo_arbol ? request.cookies.ultimo_arbol: '',
@@ -22,6 +23,7 @@ exports.listar = (request, response, next) =>{
 };
 
 exports.Alex = (request, response, next) => {
+    console.log('SI');
     response.sendFile(path.join(__dirname, '..', 'views', 'Alex.html'));
 };
 
@@ -40,6 +42,7 @@ exports.displayOne = (request, response, next) => {
     })
 }
 exports.post_nuevo = (request,response,next) =>{
+    console.log('NO1');
     console.log(request.body);
     const arbol = new Arbol(request.body.nombre, request.body.descripcion,request.body.imagen);
     arbol.save()

@@ -7,9 +7,9 @@ router.get('/login', usersController.get_login);
 
 router.post('/login', usersController.login);
 
-router.get('/logout', usersController.logout);
+router.get('/logout', isAuth, usersController.logout);
 
-router.get('/signup', isAuth, usersController.get_signup);
+router.get('/signup', usersController.get_signup);
 
 router.post('/signup', usersController.post_signup);
 

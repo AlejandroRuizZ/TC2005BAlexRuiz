@@ -26,12 +26,13 @@ module.exports = class User {
             'SELECT * FROM usuarios WHERE username=?',[usuario])
     }
     static getRole(usuario){
+        console.log(usuario)
         return db.execute(
             'SELECT idRol FROM usuario_rol,usuarios ' + 
             'WHERE usuario_rol.idUsuario = usuarios.username AND username =?',[usuario]
         )
     } static getPrivilege(role){
         return db.execute('SELECT Accion from privilegios,rol_privilegio ' +
-         'WHERE privilegios.idPrevilegios = rol_privilegio.idPrivilegio AND idRol =?' [role])
+         'WHERE privilegios.idPrevilegios = rol_privilegio.idPrivilegio AND idRol =?', [role])
     }
 }

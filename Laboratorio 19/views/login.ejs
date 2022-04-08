@@ -4,6 +4,7 @@
     <h2>Aqui tenemos Arboles</h2>
     <p>Ingresa tu Nombre de Usuario y Contraseña:</p>
     <form action="/users/login" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
         <label for="nombre"> Nombre de Usuario:</label>
         <input type="text" name="nombre" required>
         <label for="passwd"> Contraseña:</label>
